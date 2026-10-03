@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/og-image.jpg">
 
 <link rel="canonical" href="https://nguyenls3005-cell.github.io/Ls-web/">
-<link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/avatar.jpg">
+<link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0053.jpeg">
 <style>
   :root {
     --bg-img: url('background.jpg');
@@ -58,6 +58,7 @@
     width: 48px; height: 48px; border-radius: 50%;
     object-fit: cover; border: 2px solid rgba(255,255,255,0.18);
     background: rgba(255,255,255,0.1);
+    display: block;
   }
   .profile .name {
     font-weight: 800; font-size: 1.05rem;
@@ -173,7 +174,7 @@
 <div class="overlay">
 
   <div class="profile">
-    <img class="avatar" alt="avatar" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKldRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigD//2Q==">
+    <img class="avatar" alt="avatar" src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0053.jpeg?v=2">
     <div class="name">LSNguyen</div>
     <div class="caption">Web của LSNguyen, nơi đăng tải những thứ thú vị</div>
     <div class="views">
@@ -210,84 +211,32 @@
 </div>
 
 <script>
-  /* ============================================================
-     SỬA Ở ĐÂY — điền IPA và Other của bạn
-     Repo: nguyenls3005-cell/Ls-web
-     ============================================================ */
+  const ICON = 'https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/';
 
-  // Mục 1: IPA Apps
   const IPA_APPS = [
-    {
-      name: '3105 2.1 Beta 2',
-      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0019.png" alt="icon">',
-      version: '2.1 Beta 2',
-      size: '7,1 MB',
-      url: 'https://github.com/nguyenls3005-cell/Ls-web/releases/download/Test/3105-2.1-beta2-unsigned.ipa'
-    },
-    {
-      name: 'FilzaSlop',
-      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0027.png" alt="icon">',
-      version: '',
-      size: '14,9 MB',
-      url: 'https://u.pone.rs/azgscqjk.ipa'
-    },
-    {
-      name: 'Fila',
-      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0344.png" alt="icon">',
-      version: '',
-      size: '24,3 MB',
-      url: 'https://u.pone.rs/toydrwrs.ipa'
-    },
-    {
-      name: 'EnsSign',
-      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0347.png" alt="icon">',
-      version: '',
-      size: '11,3 MB',
-      url: 'https://u.pone.rs/dhkzrwjv.ipa'
-    },
-    {
-      name: 'Esign',
-      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0054.png" alt="icon">',
-      version: '',
-      size: '7,5 MB',
-      url: 'https://u.pone.rs/gmubopzc.ipa'
-    },
-    {
-      name: 'ZSign',
-      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0346.png" alt="icon">',
-      version: '',
-      size: '10 MB',
-      url: 'https://u.pone.rs/vtdapejk.ipa'
-    },
-    {
-      name: 'LCSign',
-      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0057.png" alt="icon">',
-      version: '',
-      size: '11 MB',
-      url: 'https://u.pone.rs/eitilplw.ipa'
-    },
-    {
-      name: 'Feather',
-      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0050.png" alt="icon">',
-      version: '',
-      size: '14,2 MB',
-      url: 'https://u.pone.rs/wwanreyn.ipa'
-    },
-    // Thêm app mới: copy 1 khối { ... }, dán xuống dưới, sửa
+    { name: '3105 2.1 Beta 2', icon: '<img src="' + ICON + 'IMG_0019.png?v=2">', version: '2.1 Beta 2', size: '7,1 MB', url: 'https://github.com/nguyenls3005-cell/Ls-web/releases/download/Test/3105-2.1-beta2-unsigned.ipa' },
+    { name: 'FilzaSlop', icon: '<img src="' + ICON + 'IMG_0027.png?v=2">', version: '', size: '14,9 MB', url: 'https://u.pone.rs/azgscqjk.ipa' },
+    { name: 'Fila', icon: '<img src="' + ICON + 'IMG_0344.png?v=2">', version: '', size: '24,3 MB', url: 'https://u.pone.rs/toydrwrs.ipa' },
+    { name: 'EnsSign', icon: '<img src="' + ICON + 'IMG_0347.png?v=2">', version: '', size: '11,3 MB', url: 'https://u.pone.rs/dhkzrwjv.ipa' },
+    { name: 'Esign', icon: '<img src="' + ICON + 'IMG_0054.png?v=2">', version: '', size: '7,5 MB', url: 'https://u.pone.rs/gmubopzc.ipa' },
+    { name: 'ZSign', icon: '<img src="' + ICON + 'IMG_0346.png?v=2">', version: '', size: '10 MB', url: 'https://u.pone.rs/vtdapejk.ipa' },
+    { name: 'LCSign', icon: '<img src="' + ICON + 'IMG_0057.png?v=2">', version: '', size: '11 MB', url: 'https://u.pone.rs/eitilplw.ipa' },
+    { name: 'Feather', icon: '<img src="' + ICON + 'IMG_0050.png?v=2">', version: '', size: '14,2 MB', url: 'https://u.pone.rs/wwanreyn.ipa' },
+    { name: 'AirCard', icon: '<img src="' + ICON + 'IMG_0028.png?v=2">', version: '', size: '4,6 MB', url: 'https://u.pone.rs/sglbgmhz.ipa' },
+    { name: 'Eagle', icon: '<img src="' + ICON + 'IMG_0355.png?v=2">', version: '', size: '18,3 MB', url: 'https://u.pone.rs/axzdqphr.ipa' },
+    { name: 'Lara', icon: '<img src="' + ICON + 'IMG_0079.png?v=2">', version: '', size: '5,5 MB', url: 'https://u.pone.rs/rqppytmx.ipa' },
+    { name: 'Cyanide', icon: '<img src="' + ICON + 'IMG_0357.png?v=2">', version: '', size: '6,5 MB', url: 'https://u.pone.rs/yorwrwcq.ipa' },
+    { name: 'EnsWilde-iOS 18.x-18.7.4,26.0-26.2B1', icon: '<img src="' + ICON + 'IMG_0353.png?v=2">', version: '', size: '13,6 MB', url: 'https://u.pone.rs/yzcteqxb.ipa' },
+    { name: 'Erosion', icon: '<img src="' + ICON + 'IMG_0358.png?v=2">', version: '', size: '5,4 MB', url: 'https://u.pone.rs/luyqnqqu.ipa' },
+    { name: 'Ketamine', icon: '<img src="' + ICON + 'IMG_0356.png?v=2">', version: '', size: '23,9 MB', url: 'https://u.pone.rs/royllflc.ipa' },
+    { name: 'GestaltEdit', icon: '<img src="' + ICON + 'IMG_0360.png?v=2">', version: '', size: '5,9 MB', url: 'https://u.pone.rs/bzfxwxws.ipa' },
+    { name: 'Godis', icon: '<img src="' + ICON + 'IMG_0362.png?v=2">', version: '', size: '14,9 MB', url: 'https://u.pone.rs/cuohbfnu.ipa' },
+    { name: 'Mond', icon: '<img src="' + ICON + 'IMG_0359.png?v=2">', version: '', size: '3,4 MB', url: 'https://u.pone.rs/jkbpfufw.ipa' },
   ];
 
-  // Mục 2: Other
   const OTHER_ITEMS = [
-    {
-      name: 'Mục Khác Mẫu',
-      icon: '📦',
-      version: '',
-      size: 'Mô tả ngắn',
-      url: 'https://github.com/nguyenls3005-cell/Ls-web/releases/download/other/FileA.zip'
-    },
+    { name: 'Mục Khác Mẫu', icon: '📦', version: '', size: 'Mô tả ngắn', url: 'https://github.com/nguyenls3005-cell/Ls-web/releases/download/other/FileA.zip' },
   ];
-
-  /* =========== ĐỪNG SỬA DƯỚI ĐÂY =========== */
 
   function renderCards(containerId, items) {
     const el = document.getElementById(containerId);
@@ -311,7 +260,6 @@
   renderCards('ipaGrid', IPA_APPS);
   renderCards('otherGrid', OTHER_ITEMS);
 
-  // ---- Tìm kiếm ----
   const input = document.getElementById('searchInput');
   const sections = Array.from(document.querySelectorAll('.section'));
   const empty = document.getElementById('emptyMsg');
@@ -319,7 +267,6 @@
   input.addEventListener('input', () => {
     const q = input.value.trim().toLowerCase();
     let visibleTotal = 0;
-
     sections.forEach(sec => {
       let visibleInSection = 0;
       sec.querySelectorAll('.card').forEach(c => {
@@ -331,15 +278,12 @@
       sec.style.display = visibleInSection === 0 ? 'none' : 'block';
       visibleTotal += visibleInSection;
     });
-
     empty.style.display = visibleTotal === 0 ? 'block' : 'none';
   });
 
-  // ---- Đếm view (3 lớp dự phòng) ----
   (async () => {
     const viewEl = document.getElementById('viewCount');
     if (!viewEl) return;
-
     try {
       const res = await fetch('https://api.counterapi.dev/v1/lsnguyen-lsweb/homepage/up');
       if (res.ok) {
@@ -350,7 +294,6 @@
         }
       }
     } catch (e) {}
-
     try {
       const res = await fetch('https://api.counterapi.dev/v1/lsnguyen-ipa/hits/up');
       if (res.ok) {
@@ -361,7 +304,6 @@
         }
       }
     } catch (e) {}
-
     try {
       const local = parseInt(localStorage.getItem('lsn_views') || '0', 10) + 1;
       localStorage.setItem('lsn_views', local);
