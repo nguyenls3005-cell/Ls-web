@@ -43,7 +43,7 @@
     min-height: 100%;
   }
   .overlay {
-    min-height: 100%;
+    min-height: 100vh;
     background: linear-gradient(180deg, rgba(8,8,10,0.72), rgba(8,8,10,0.88));
     padding: 20px 14px 36px;
     padding-top: calc(20px + env(safe-area-inset-top, 0px));
@@ -57,6 +57,7 @@
   .profile .avatar {
     width: 48px; height: 48px; border-radius: 50%;
     object-fit: cover; border: 2px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.1);
   }
   .profile .name {
     font-weight: 800; font-size: 1.05rem;
@@ -214,19 +215,68 @@
      Repo: nguyenls3005-cell/Ls-web
      ============================================================ */
 
-  // Mục 1: IPA Apps (tag share-ipa)
+  // Mục 1: IPA Apps
   const IPA_APPS = [
     {
-      name: 'Tên App Mẫu',
-      icon: '📱',
-      version: '1.0.0',
-      size: '120 MB',
-      url: 'https://github.com/nguyenls3005-cell/Ls-web/releases/download/share-ipa/AppA.ipa'
+      name: '3105 2.1 Beta 2',
+      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0019.png" alt="icon">',
+      version: '2.1 Beta 2',
+      size: '7,1 MB',
+      url: 'https://github.com/nguyenls3005-cell/Ls-web/releases/download/Test/3105-2.1-beta2-unsigned.ipa'
     },
-    // Thêm app mới: copy 1 khối { ... }, dán xuống dưới
+    {
+      name: 'FilzaSlop',
+      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0027.png" alt="icon">',
+      version: '',
+      size: '14,9 MB',
+      url: 'https://u.pone.rs/azgscqjk.ipa'
+    },
+    {
+      name: 'Fila',
+      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0344.png" alt="icon">',
+      version: '',
+      size: '24,3 MB',
+      url: 'https://u.pone.rs/toydrwrs.ipa'
+    },
+    {
+      name: 'EnsSign',
+      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0347.png" alt="icon">',
+      version: '',
+      size: '11,3 MB',
+      url: 'https://u.pone.rs/dhkzrwjv.ipa'
+    },
+    {
+      name: 'Esign',
+      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0054.png" alt="icon">',
+      version: '',
+      size: '7,5 MB',
+      url: 'https://u.pone.rs/gmubopzc.ipa'
+    },
+    {
+      name: 'ZSign',
+      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0346.png" alt="icon">',
+      version: '',
+      size: '10 MB',
+      url: 'https://u.pone.rs/vtdapejk.ipa'
+    },
+    {
+      name: 'LCSign',
+      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0057.png" alt="icon">',
+      version: '',
+      size: '11 MB',
+      url: 'https://u.pone.rs/eitilplw.ipa'
+    },
+    {
+      name: 'Feather',
+      icon: '<img src="https://raw.githubusercontent.com/nguyenls3005-cell/Ls-web/main/assets/IMG_0050.png" alt="icon">',
+      version: '',
+      size: '14,2 MB',
+      url: 'https://u.pone.rs/wwanreyn.ipa'
+    },
+    // Thêm app mới: copy 1 khối { ... }, dán xuống dưới, sửa
   ];
 
-  // Mục 2: Other (tag other)
+  // Mục 2: Other
   const OTHER_ITEMS = [
     {
       name: 'Mục Khác Mẫu',
@@ -285,31 +335,13 @@
     empty.style.display = visibleTotal === 0 ? 'block' : 'none';
   });
 
-  // ============================================================
-  //  ĐẾM VIEW — dùng 2 API dự phòng, cái nào chạy thì dùng
-  // ============================================================
+  // ---- Đếm view (3 lớp dự phòng) ----
   (async () => {
     const viewEl = document.getElementById('viewCount');
     if (!viewEl) return;
 
-    // Cách 1: CounterAPI (ổn định nhất)
     try {
-      const res = await fetch(
-        'https://api.counterapi.dev/v1/lsnguyen-lsweb/homepage/up',
-        { method: 'GET' }
-      );
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data.count) {
-          viewEl.textContent = Number(data.count).toLocaleString('vi-VN');
-          return; // thành công thì thoát, không thử cách 2
-        }
-      }
-    } catch (e) { /* thử cách 2 */ }
-
-    // Cách 2: CounterAPI fallback (namespace khác)
-    try {
-      const res = await fetch('https://api.counterapi.dev/v1/lsnguyen-ipa-home/hits/up');
+      const res = await fetch('https://api.counterapi.dev/v1/lsnguyen-lsweb/homepage/up');
       if (res.ok) {
         const data = await res.json();
         if (data && data.count) {
@@ -317,15 +349,25 @@
           return;
         }
       }
-    } catch (e) { /* thử cách 3 */ }
+    } catch (e) {}
 
-    // Cách 3: hiện localStorage tạm (không chính xác nhưng không hiện 0)
+    try {
+      const res = await fetch('https://api.counterapi.dev/v1/lsnguyen-ipa/hits/up');
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.count) {
+          viewEl.textContent = Number(data.count).toLocaleString('vi-VN');
+          return;
+        }
+      }
+    } catch (e) {}
+
     try {
       const local = parseInt(localStorage.getItem('lsn_views') || '0', 10) + 1;
       localStorage.setItem('lsn_views', local);
       viewEl.textContent = local.toLocaleString('vi-VN');
-    } catch (e) {
-      viewEl.textContent = '0';
+    } catch (e2) {
+      viewEl.textContent = '1';
     }
   })();
 </script>
